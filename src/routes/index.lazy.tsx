@@ -1,15 +1,8 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 import MissingPage from "../pages/404/MissingPage";
+import Index from "../pages";
 
 export const Route = createLazyFileRoute("/")({
-  component: Index,
+  component: () => <Index />,
   notFoundComponent: () => <MissingPage />,
 });
-
-function Index() {
-  return (
-    <div className="p-2">
-      <h3>Welcome to index!</h3>
-    </div>
-  );
-}

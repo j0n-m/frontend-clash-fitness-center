@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Clash;
+  src: url("/src/assets/fonts/clash.woff2");
+}
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,7 +25,7 @@ body {
   width: 100%;
   height: 100%;
   color: #0f0f0f;
-  font-family:
+  /* font-family:
     sans-serif,
     system-ui,
     -apple-system,
@@ -32,5 +37,54 @@ body {
     Cantarell,
     "Open Sans",
     "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
+  font-family: Clash;
+}
+main {
+  max-width: 2100px;
+  margin: 0 auto;
+}
+
+a,
+button {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+button[data-rac] {
+  outline: none;
+  &[data-focus-visible] {
+    outline: 2px solid white;
+  }
+}
+
+.food-icon {
+  background: url("/src/assets/icons/food-icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  user-select: none;
+}
+.weights-icon {
+  background: url("/src/assets/icons/weights.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  user-select: none;
+}
+.hero-content-img {
+  background-image: url("/src/assets/images/hero-background.jpg");
+  background-repeat: no-repeat;
+  background-position: 30%;
+  background-size: 1500px auto;
+}
+.hero-content-img-sm {
+  background-image: url("/src/assets/images/hero-background-crop.jpeg");
+  background-repeat: no-repeat;
+  background-position: 54% top;
+  background-size: 650px auto;
 }
