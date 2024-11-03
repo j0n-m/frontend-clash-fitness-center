@@ -13,6 +13,9 @@ export default {
         t1: "#606060",
         t0inverse: "#f1f1f1",
       },
+      screens: {
+        xs: "425px",
+      },
     },
   },
   plugins: [],

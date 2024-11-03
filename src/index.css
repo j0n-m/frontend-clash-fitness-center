@@ -8,6 +8,7 @@
 }
 
 :root {
+  --page-padding: 4rem;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -76,6 +77,24 @@ button[data-rac] {
   width: 40px;
   user-select: none;
 }
+.weights2-icon {
+  background: url("/src/assets/icons/weights2-icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  user-select: none;
+}
+.trainer-icon {
+  background: url("/src/assets/icons/personal-trainer-icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  user-select: none;
+}
+.staff-icon {
+  background: url("/src/assets/icons/staff-icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  user-select: none;
+}
 .hero-content-img {
   background-image: url("/src/assets/images/hero-background.jpg");
   background-repeat: no-repeat;
@@ -87,4 +106,88 @@ button[data-rac] {
   background-repeat: no-repeat;
   background-position: 54% top;
   background-size: 650px auto;
+}
+.title-bg {
+  background-image: url("/src/assets/images/title-bg.svg");
+  background-repeat: no-repeat;
+  width: 208px;
+  height: auto;
+}
+.title-bg2 {
+  background-image: url("/src/assets/images/title-bg2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: auto;
+}
+.title-bg3 {
+  background-image: url("/src/assets/images/title-bg2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.whoweare-section,
+.fitness-section {
+  background-image: url("/src/assets/images/rough-gray-bg.jpg");
+}
+.join-us-heading {
+  background-image: url("https://res.cloudinary.com/dgio3wn9w/image/upload/v1730584121/cta-bg.2d95a78b_brexx0.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 45%;
+}
+.join-btn-container {
+  position: relative;
+  z-index: 0;
+}
+.join-us-btn {
+  position: relative;
+  transition: all 400ms;
+}
+.join-us-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(8%, -20%);
+  background-color: transparent;
+  border: 1px solid white;
+  transition: all 400ms;
+  z-index: -1;
+}
+.join-us-btn:hover::before,
+.join-us-btn:focus::before {
+  transition: all 400ms;
+  transform: translate(0%, 0%);
+}
+
+.see-classes-btn {
+  position: relative;
+  transition: all 400ms;
+}
+.see-classes-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(8%, -20%);
+  background-color: transparent;
+  border: 1px solid #3f3f3f;
+  transition: all 400ms;
+  z-index: -1;
+}
+.see-classes-btn:hover::after,
+.see-classes-btn:focus::after {
+  transition: all 400ms;
+  transform: translate(0%, 0%);
+}
+.see-classes-btn:hover,
+.see-classes-btn:focus {
+  background-color: #4d4d4d;
 }
