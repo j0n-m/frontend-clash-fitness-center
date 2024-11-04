@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "@heroicons/react/16/solid";
 
 function PricingSection() {
   return (
-    <section className="py-20 px-4 md:px-10">
+    <section className="py-20 px-4 md:px-10 rough-bg">
       <div className="relative h-[30px]">
         <h2 className="absolute z-10 text-white top-[2px] left-[50%] translate-x-[-50%] text-center font-bold text-lg">
           Pricing Chart
@@ -19,7 +19,7 @@ function PricingSection() {
           return (
             <div
               key={ms.id}
-              className="membership-card shadow-xl p-10 flex flex-col justify-between h-full w-full min-h-[400px]"
+              className="membership-card bg-white shadow-xl p-10 flex flex-col justify-between h-full w-full min-h-[400px]"
             >
               <div className="">
                 <h4 className="text-center font-bold text-xl md:text-3xl py-8">

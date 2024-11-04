@@ -12,7 +12,7 @@ function Nav() {
           <Link to="/">
             <div className="logo text-white">
               <p className="text-2xl font-bold">Clash</p>
-              <p className="-mt-2 text-xs text-center">Fitness Center</p>
+              <p className="mt-[-6px] text-xs text-center">Fitness Center</p>
             </div>
           </Link>
         </li>

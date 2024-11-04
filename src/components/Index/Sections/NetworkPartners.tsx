@@ -1,6 +1,6 @@
 function NetworkPartners() {
   return (
-    <section className="px-5 py-8 border-b">
+    <section className="px-5 py-8">
       <div className="relative h-[34px]">
         <h2 className="absolute z-10 text-white top-[2px] left-[50%] translate-x-[-50%] text-center font-bold text-lg">
           Partners

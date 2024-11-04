@@ -129,7 +129,8 @@ button[data-rac] {
   margin: 0 auto;
 }
 .whoweare-section,
-.fitness-section {
+.fitness-section,
+.rough-bg {
   background-image: url("/src/assets/images/rough-gray-bg.jpg");
 }
 .join-us-heading {
@@ -241,4 +242,11 @@ button[data-rac] {
 }
 .trainer-card:hover img {
   filter: grayscale(0);
+}
+
+.contact-trainer-bg {
+  background-image: url("https://res.cloudinary.com/dgio3wn9w/image/upload/v1730689664/background.e251ad7e_zjcumk.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40%;
 }

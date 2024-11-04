@@ -24,7 +24,6 @@ function Index() {
       <PricingSection />
       <LatestBlogSection />
       <ContactFitnessTrainer />
-      <footer className="text-center">footer</footer>
     </main>
   );
 }
