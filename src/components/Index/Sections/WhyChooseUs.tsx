@@ -26,11 +26,11 @@ const ChooseUsIcons = [
 
 function WhyChooseUs() {
   return (
-    <section className="bg-black-primary py-8 px-[--page-padding] lg:px-8 xl:px-[--page-padding]">
+    <section className="bg-black-primary py-8 px-[--page-padding] lg:px-8 xl:px-[--page-padding] overflow-hidden">
       <div className="choose-us-content">
         <div className="flex flex-col lg:flex-row lg:gap-6">
           <img
-            className="max-w-[500px] aspect-auto mx-auto lg:flex-[1]"
+            className="lg:max-w-[500px] aspect-auto mx-auto lg:flex-[1]"
             src={
               "https://res.cloudinary.com/dgio3wn9w/image/upload/v1730592222/image_lwawqw.png"
             }
@@ -69,7 +69,7 @@ function WhyChooseUs() {
               ))}
             </div>
             <div className="mt-12 relative z-0">
-              <Link className="see-classes-btn bg-gray-primary text-white text-xl font-bold px-8 py-4 inline-flex items-center">
+              <Link className="see-classes-btn bg-gray-primary text-white text-lg font-bold px-8 py-4 inline-flex items-center">
                 <span>Our Classes</span>
                 <ArrowRightIcon className="size-6 ml-1 pt-1" />
               </Link>

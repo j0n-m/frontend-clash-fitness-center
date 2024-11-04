@@ -6,18 +6,18 @@ import { Button } from "react-aria-components";
 function Nav() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
-    <nav className="px-3 bg-black-primary text-white-dim1">
+    <nav className="px-8 py-2 bg-black-primary text-white-dim1">
       <ul className="flex justify-between overflow-hidden p-1 lg:p2">
         <li className="left">
           <Link to="/">
-            <div className="logo text-white-primary">
+            <div className="logo text-white">
               <p className="text-2xl font-bold">Clash</p>
               <p className="-mt-2 text-xs text-center">Fitness Center</p>
             </div>
           </Link>
         </li>
         <li className="middle lg:flex items-center hidden">
-          <div className="flex gap-5">
+          <div className="flex gap-5 text-lg">
             <Link
               className={`hover:text-white-primary focus-visible:text-white-primary`}
               to="/"
@@ -62,11 +62,11 @@ function Nav() {
             </Link>
           </div>
         </li>
-        <li className="right flex flex-col justify-center pr-1">
+        <li className="right flex flex-col justify-center rounded-lg">
           <div className="lg:hidden">
             <Button
               className={({ isHovered }) =>
-                `p-2 h-full rounded-lg ${isHovered ? "text-white-primary" : ""}`
+                `p-2 h-full rounded-lg ${isHovered ? "text-white" : ""}`
               }
               onPress={() => setShowMobileMenu(!showMobileMenu)}
             >
@@ -85,9 +85,9 @@ function Nav() {
               </p>
             </Button>
           </div>
-          <div className="hidden lg:flex lg:items-center">
+          <div className="hidden lg:flex lg:items-center rounded-lg">
             <Link
-              className={`hover:text-white-primary focus-visible:text-white-primary outline outline-white-dim1 py-1 px-3 rounded-full hover:outline-white-primary`}
+              className={`hover:text-white-primary focus-visible:text-white-primary border-2 border-gray-primary py-1 px-4 rounded-lg hover:border-white-primary`}
             >
               Join a class
             </Link>

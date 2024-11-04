@@ -13,8 +13,8 @@ function HeroSection() {
           <p className="uppercase text-3xl lg:text-5xl mt-2 text-center">
             Fit & Strong
           </p>
-          <div className="link-to-classes mt-4 lg:mt-6 flex justify-center">
-            <Link className="bg-white-primary rounded-md select-none text-black-primary py-3 px-6 font-bold hover:bg-white-dim1 focus-visible:bg-white-dim1">
+          <div className="link-to-classes relative z-0 mt-6 lg:mt-10 flex justify-center">
+            <Link className="bg-white-primary join-us-btn select-none text-black-primary py-4 px-8 font-bold hover:bg-white-dim1 focus-visible:bg-white-dim1">
               Our Classes
             </Link>
           </div>
