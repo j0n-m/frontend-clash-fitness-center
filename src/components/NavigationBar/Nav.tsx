@@ -6,7 +6,7 @@ import { Button } from "react-aria-components";
 function Nav() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
-    <nav className="px-8 py-2 bg-black-primary text-white-dim1">
+    <nav className="px-4 lg:px-8 py-2 bg-black-primary text-white-dim1">
       <ul className="flex justify-between overflow-hidden p-1 lg:p2">
         <li className="left">
           <Link to="/">

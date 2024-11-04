@@ -47,10 +47,10 @@ function WhyChooseUs() {
               We Can Give A Shape To Your Body Here!
             </h3>
             <p className="text-gray-400 text-lg lg:text-xl">
-              At Gymate, we are dedicated to helping you achieve the body of
-              your dreams. Our expert trainers and nutritionists will work with
-              you to create a personalized fitness and nutrition plan that helps
-              you reach your specific goals.
+              At Clash fitness center, we are dedicated to helping you achieve
+              the body of your dreams. Our expert trainers and nutritionists
+              will work with you to create a personalized fitness and nutrition
+              plan that helps you reach your specific goals.
             </p>
 
             <div className="grid grid-cols-1 xs:grid-cols-2 text-white text-xl gap-x-3 gap-y-6 mt-8 font-bold lg:place-items-start">

@@ -22,7 +22,7 @@ function PricingSection() {
               className="membership-card bg-white shadow-xl p-10 flex flex-col justify-between h-full w-full min-h-[400px]"
             >
               <div className="">
-                <h4 className="text-center font-bold text-xl md:text-3xl py-8">
+                <h4 className="text-center font-bold text-2xl md:text-3xl py-8">
                   {ms.label}
                 </h4>
                 <p className="text-center font-bold text-xl md:text-2xl">
