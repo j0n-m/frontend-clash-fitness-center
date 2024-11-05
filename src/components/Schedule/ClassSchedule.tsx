@@ -4,8 +4,10 @@ import { ClassDays, validClassDays } from "../../routes/schedule/route";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { Link, Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 import { classDictionary } from "../../utils/allClasses";
-import upperFirstLetters from "../../utils/UpperFirstLetters";
+import upperFirstLetters from "../../utils/upperFirstLetters";
+import { endWeek, startWeek } from "../../utils/time";
 
+//visually sets a border around the day tab to denote the current day
 const currentDay = validClassDays[new Date().getDay()];
 function ClassSchedule() {
   //day of week specifies the default day to automatically load in schedule
@@ -16,10 +18,7 @@ function ClassSchedule() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("navigate?");
-    if (classDay !== dayOfWeek.day) {
-      navigate({ to: ".", search: { day: classDay } });
-    }
+    navigate({ to: ".", search: { day: classDay } });
   }, [classDay]);
 
   return (
@@ -28,6 +27,9 @@ function ClassSchedule() {
       <div className="pt-20 pb-40 px-4 md:px-10 lg:px-32 max-w-[2000px] mx-auto">
         <p className="font-bold text-center text-xl xs:text-2xl md:text-3xl py-10">
           Enroll in sessions by day
+        </p>
+        <p className="text-xl pb-6 text-center">
+          Week of: {startWeek} - {endWeek}
         </p>
         <Tabs
           selectedKey={classDay}
@@ -57,6 +59,10 @@ function ClassSchedule() {
             return (
               <TabPanel key={index} id={day}>
                 <div className="flex flex-col gap-2 my-8">
+                  <p className="text-gray-500 text-sm">
+                    *Must be enrolled 24 hours ahead of the class start time
+                  </p>
+
                   {classDictionary[day]?.map((classes, index) => (
                     <div
                       key={index}

@@ -21,7 +21,7 @@ const trainers: TrainerType[] = [
     id: 100,
   },
   {
-    name: "Brad Martin",
+    name: "Hulk Hogan",
     id: 101,
   },
   {
@@ -56,6 +56,30 @@ const trainers: TrainerType[] = [
     name: "Alex Clark",
     id: 109,
   },
+  {
+    name: "Cindy Campbell",
+    id: 110,
+  },
+  {
+    name: "Jackie Chan",
+    id: 111,
+  },
+  {
+    name: "Mike Tyson",
+    id: 112,
+  },
+  {
+    name: "Hailey Webber",
+    id: 113,
+  },
+  {
+    name: "Forrest Gump",
+    id: 114,
+  },
+  {
+    name: "John Rambo",
+    id: 115,
+  },
 ];
 
 const DATE_STR = "2024-10-10";
@@ -89,7 +113,7 @@ const allClasses_unsorted: allClassesType = [
     time: "Sunday: 6:00pm - 7:00pm",
     dateFormat: new Date(`${DATE_STR} 18:00`),
     day: "sunday",
-    instructor: trainers[7],
+    instructor: trainers[11],
     img_alt: "A group of students standing and listening in a taekwando class",
     img_src:
       "https://res.cloudinary.com/dgio3wn9w/image/upload/v1730578020/martial-arts_fp7ep8.jpg",
@@ -130,7 +154,7 @@ const allClasses_unsorted: allClassesType = [
   {
     id: 106,
     label: "Strength Building",
-    instructor: trainers[0],
+    instructor: trainers[15],
     time: "Friday: 4:00pm - 5:00pm",
     dateFormat: new Date(`${DATE_STR} 16:00`),
     day: "friday",
@@ -141,7 +165,7 @@ const allClasses_unsorted: allClassesType = [
   {
     id: 107,
     label: "Yoga",
-    instructor: trainers[7],
+    instructor: trainers[10],
     time: "Friday: 1:00pm - 2:00pm",
     dateFormat: new Date(`${DATE_STR} 13:00`),
     day: "friday",
@@ -149,12 +173,41 @@ const allClasses_unsorted: allClassesType = [
     img_src:
       "https://res.cloudinary.com/dgio3wn9w/image/upload/v1730578906/image_nfybez.jpg",
   },
+  {
+    id: 108,
+    label: "Boxing",
+    instructor: trainers[12],
+    time: "Wednesday 1:00pm - 2:00pm",
+    dateFormat: new Date(`${DATE_STR} 13:00`),
+    day: "wednesday",
+    img_alt: "A man with boxing glove punching a punching bag",
+    img_src:
+      "https://res.cloudinary.com/dgio3wn9w/image/upload/v1730828250/boxing_xpz7pz.webp",
+  },
+  {
+    id: 109,
+    label: "Pilates",
+    instructor: trainers[13],
+    time: "Saturday 3:00pm - 4:00pm",
+    dateFormat: new Date(`${DATE_STR} 15:00`),
+    day: "saturday",
+    img_alt: "A class on a gym matt doing pilates",
+    img_src:
+      "https://res.cloudinary.com/dgio3wn9w/image/upload/v1730828496/69A1432-1_raxnre.jpg",
+  },
+  {
+    id: 110,
+    label: "Running",
+    instructor: trainers[14],
+    time: "Tuesday 1:00pm - 2:00pm",
+    dateFormat: new Date(`${DATE_STR} 13:00`),
+    day: "tuesday",
+    img_alt: "",
+    img_src:
+      "https://res.cloudinary.com/dgio3wn9w/image/upload/v1730828805/man-running-on-road_hjoonu.jpg",
+  },
 ];
-//pilates
-//cardio
 //zumba
-//boxing
-//Running
 
 // const allClasses: allClassesType = allClasses_unsorted.sort((a, b) =>
 //   a.label < b.label ? -1 : a.label > b.label ? 1 : 0

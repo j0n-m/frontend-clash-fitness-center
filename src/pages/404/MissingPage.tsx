@@ -14,12 +14,13 @@ function MissingPage() {
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
             to="/"
-            className="rounded-md bg-red-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-primary/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="bg-red-primary px-6 py-3 font-semibold text-white shadow-sm hover:bg-red-primary/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Go back home
           </Link>
         </div>
       </div>
+      <p className="mb-40"></p>
     </main>
   );
 }

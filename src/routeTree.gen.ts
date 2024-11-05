@@ -13,7 +13,10 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as PricingImport } from './routes/pricing'
+import { Route as ContactImport } from './routes/contact'
 import { Route as ScheduleRouteImport } from './routes/schedule/route'
+import { Route as ClassesRouteImport } from './routes/classes/route'
 
 // Create Virtual Routes
 
@@ -28,6 +31,18 @@ const AboutLazyRoute = AboutLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
 
+const PricingRoute = PricingImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContactRoute = ContactImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const ScheduleRouteRoute = ScheduleRouteImport.update({
   id: '/schedule',
   path: '/schedule',
@@ -35,6 +50,12 @@ const ScheduleRouteRoute = ScheduleRouteImport.update({
 } as any).lazy(() =>
   import('./routes/schedule/route.lazy').then((d) => d.Route),
 )
+
+const ClassesRouteRoute = ClassesRouteImport.update({
+  id: '/classes',
+  path: '/classes',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexLazyRoute = IndexLazyImport.update({
   id: '/',
@@ -53,11 +74,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
+    '/classes': {
+      id: '/classes'
+      path: '/classes'
+      fullPath: '/classes'
+      preLoaderRoute: typeof ClassesRouteImport
+      parentRoute: typeof rootRoute
+    }
     '/schedule': {
       id: '/schedule'
       path: '/schedule'
       fullPath: '/schedule'
       preLoaderRoute: typeof ScheduleRouteImport
+      parentRoute: typeof rootRoute
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingImport
       parentRoute: typeof rootRoute
     }
     '/about': {
@@ -74,41 +116,63 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
+  '/classes': typeof ClassesRouteRoute
   '/schedule': typeof ScheduleRouteRoute
+  '/contact': typeof ContactRoute
+  '/pricing': typeof PricingRoute
   '/about': typeof AboutLazyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
+  '/classes': typeof ClassesRouteRoute
   '/schedule': typeof ScheduleRouteRoute
+  '/contact': typeof ContactRoute
+  '/pricing': typeof PricingRoute
   '/about': typeof AboutLazyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
+  '/classes': typeof ClassesRouteRoute
   '/schedule': typeof ScheduleRouteRoute
+  '/contact': typeof ContactRoute
+  '/pricing': typeof PricingRoute
   '/about': typeof AboutLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/schedule' | '/about'
+  fullPaths: '/' | '/classes' | '/schedule' | '/contact' | '/pricing' | '/about'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/schedule' | '/about'
-  id: '__root__' | '/' | '/schedule' | '/about'
+  to: '/' | '/classes' | '/schedule' | '/contact' | '/pricing' | '/about'
+  id:
+    | '__root__'
+    | '/'
+    | '/classes'
+    | '/schedule'
+    | '/contact'
+    | '/pricing'
+    | '/about'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
+  ClassesRouteRoute: typeof ClassesRouteRoute
   ScheduleRouteRoute: typeof ScheduleRouteRoute
+  ContactRoute: typeof ContactRoute
+  PricingRoute: typeof PricingRoute
   AboutLazyRoute: typeof AboutLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
+  ClassesRouteRoute: ClassesRouteRoute,
   ScheduleRouteRoute: ScheduleRouteRoute,
+  ContactRoute: ContactRoute,
+  PricingRoute: PricingRoute,
   AboutLazyRoute: AboutLazyRoute,
 }
 
@@ -125,15 +189,27 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/classes",
         "/schedule",
+        "/contact",
+        "/pricing",
         "/about"
       ]
     },
     "/": {
       "filePath": "index.lazy.tsx"
     },
+    "/classes": {
+      "filePath": "classes/route.tsx"
+    },
     "/schedule": {
       "filePath": "schedule/route.tsx"
+    },
+    "/contact": {
+      "filePath": "contact.tsx"
+    },
+    "/pricing": {
+      "filePath": "pricing.tsx"
     },
     "/about": {
       "filePath": "about.lazy.tsx"
