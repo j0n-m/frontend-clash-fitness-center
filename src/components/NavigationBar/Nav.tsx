@@ -26,7 +26,7 @@ function Nav() {
             </Link>
             <Link
               className={`hover:text-white-primary focus-visible:text-white-primary`}
-              to="/"
+              to="/about"
             >
               About
             </Link>
@@ -38,7 +38,7 @@ function Nav() {
             </Link>
             <Link
               className={`hover:text-white-primary focus-visible:text-white-primary`}
-              to="/"
+              to="/schedule"
             >
               Schedule
             </Link>

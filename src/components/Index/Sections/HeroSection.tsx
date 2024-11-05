@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 function HeroSection() {
   return (
-    <section className="hero bg-black-primary min-h-svh">
+    <section className="hero bg-black-primary min-h-svh" id="hero">
       <div
         className={`hero-content text-white-primary min-h-svh relative max-w-[1200px] mx-auto overflow-hidden`}
       >
