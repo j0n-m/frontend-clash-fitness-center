@@ -41,7 +41,10 @@ function WhoWeAreSection() {
         </div>
       </div>
       <div className="text-center mt-16">
-        <Link className="bg-gray-primary px-10 py-6 inline-flex items-center justify-center gap-1 hover:bg-red-primary focus-visible:bg-red-primary transition-colors duration-300">
+        <Link
+          to="/classes"
+          className="bg-gray-primary px-10 py-6 inline-flex items-center justify-center gap-1 hover:bg-red-primary focus-visible:bg-red-primary transition-colors duration-300"
+        >
           <span className="uppercase font-bold text-lg text-white-primary">
             Take a Tour
           </span>

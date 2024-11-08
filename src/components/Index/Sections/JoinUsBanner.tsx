@@ -9,7 +9,10 @@ function JoinUsBanner() {
             We are always providing the best fitness service for you
           </h2>
           <div className="join-btn-container relative flex items-center justify-center">
-            <Link className="join-us-btn relative bg-white text-black-primary px-8 py-3 lg:py-4 lg:px-12 text-lg lg:text-lg font-bold w-max hover:bg-white/90">
+            <Link
+              to="/about"
+              className="join-us-btn relative bg-white text-black-primary px-8 py-3 lg:py-4 lg:px-12 text-lg lg:text-lg font-bold w-max hover:bg-white/90"
+            >
               Join Us
             </Link>
           </div>

@@ -2,6 +2,7 @@ import { Button } from "react-aria-components";
 import LandingHeader from "../../components/LandingHeader";
 import openingHours from "../../utils/openingHours";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 function ContactPage() {
   const [name, setName] = useState("");
@@ -39,6 +40,9 @@ function ContactPage() {
   };
   return (
     <section>
+      <Helmet>
+        <title>Clash Fitness Center | Contact Us</title>
+      </Helmet>
       <LandingHeader text="Contact Us" />
       <div className="content py-10 px-4 md:px-10 lg:px-[--page-padding]">
         <div className="flex flex-col lg:flex-row gap-10">
@@ -66,7 +70,7 @@ function ContactPage() {
           <div className="right-content lg:min-w-[450px]">
             <form
               onSubmit={handleSubmit}
-              className="contact-form bg-gray-200 px-6 py-10 rounded-md "
+              className="contact-form border-2 px-6 py-10 rounded-md shadow-lg"
             >
               {!formIsSubmitted ? (
                 <div className="flex flex-col gap-5">
@@ -88,7 +92,7 @@ function ContactPage() {
                         setName(e.target.value);
                       }}
                       id="name"
-                      className="h-[40px] px-3 rounded-lg"
+                      className="h-[40px] px-3 rounded-lg border focus-visible:outline-none focus-visible:border-gray-400 focus-visible:border-2"
                       placeholder="e.g. John Doe"
                     />
                     {error?.name && (
@@ -107,7 +111,7 @@ function ContactPage() {
                       }}
                       required={true}
                       id="email"
-                      className="h-[40px] px-3 rounded-lg"
+                      className="h-[40px] px-3 rounded-lg border focus-visible:outline-none focus-visible:border-gray-400 focus-visible:border-2"
                       placeholder="e.g. jdoe@example.com"
                     />
                     {error?.email && (
@@ -126,7 +130,7 @@ function ContactPage() {
                       }}
                       required={true}
                       minLength={5}
-                      className="p-3 rounded-lg"
+                      className="p-3 rounded-lg border focus-visible:outline-none focus-visible:border-gray-400 focus-visible:border-2"
                       rows={3}
                     />
                     {error?.comments && (
@@ -145,8 +149,12 @@ function ContactPage() {
                   </div>
                 </div>
               ) : (
-                <p className="font-bold">
-                  Thank you, we will reach out to you within 48 hours.
+                <p className="">
+                  <span className="font-bold">Thank you, </span>
+                  <br></br>
+                  <span className="inline-block mt-1">
+                    We will email you within 48 hours.
+                  </span>
                 </p>
               )}
             </form>

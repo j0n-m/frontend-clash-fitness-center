@@ -14,7 +14,8 @@ function LatestBlogSection() {
         Our Recent News
       </h2>
       <div className="grid lg:grid-cols-3 place-content-center gap-4 max-w-[1400px] mx-auto">
-        {latestBlogs.map((blog) => {
+        {latestBlogs.map((blog, i) => {
+          if (i >= 3) return null;
           return (
             <div
               key={blog.id}
@@ -32,7 +33,10 @@ function LatestBlogSection() {
                 <p className="text-gray-500 my-6">{blog.article_highlight}</p>
               </div>
               <div className="read-btn">
-                <Link className="purchase-red-btn bg-red-primary text-white font-bold py-4 px-6 inline-block">
+                <Link
+                  to="/blog"
+                  className="purchase-red-btn bg-red-primary text-white font-bold py-4 px-6 inline-block"
+                >
                   Read More
                 </Link>
               </div>

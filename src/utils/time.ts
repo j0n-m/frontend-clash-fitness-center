@@ -21,8 +21,9 @@ function getWeekDatesFromWeekDay(weekNum: number) {
 }
 
 function isClassAvailable(weekNum: number, day: string, classD: Date) {
-  const currentDay = moment().day();
-  const currentDate = moment().day(currentDay + 1);
+  // const currentDay = moment().day();
+  const currentDate = moment().locale("en-us").add(1, "day").toDate();
+  // const currentDate = moment().day(currentDay + 1);
   const classDate = moment(classD).week(weekNum);
 
   // console.log(currentWeekofYear, classDate);

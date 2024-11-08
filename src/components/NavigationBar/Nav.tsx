@@ -1,8 +1,10 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import { Link, useNavigate } from "@tanstack/react-router";
+import { Link as LinkT } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Button, Dialog, DialogTrigger, Modal } from "react-aria-components";
 import navLinks from "../../utils/navigationLinks";
+import { getCurrentWeek } from "../../utils/time";
 
 function Nav() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -35,14 +37,33 @@ function Nav() {
         </li>
         <li className="middle lg:flex items-center hidden">
           <div className="flex gap-5 text-lg">
-            <Link key={0} href={"/"}>
+            <Link
+              key={0}
+              href={"/"}
+              className="hover:text-white transition-all duration-[300ms]"
+            >
               Home
             </Link>
-            {navLinks.map((link) => {
+            {/* {navLinks.map((link) => {
               return (
-                <Link key={link.id} href={link.href}>
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  className="hover:text-white transition-all duration-[300ms]"
+                >
                   {link.label}
                 </Link>
+              );
+            })} */}
+            {navLinks.map((link) => {
+              return (
+                <LinkT
+                  key={link.id}
+                  to={link.href}
+                  className="hover:text-white transition-all duration-[300ms]"
+                >
+                  {link.label}
+                </LinkT>
               );
             })}
           </div>
@@ -104,7 +125,9 @@ function Nav() {
           </div>
           <div className="hidden lg:flex lg:items-center rounded-lg">
             <Link
-              className={`hover:text-white-primary focus-visible:text-white-primary border-2 border-gray-primary py-1 px-4 rounded-lg hover:border-white-primary`}
+              to="/schedule"
+              search={{ week: getCurrentWeek() }}
+              className={`hover:text-white-primary focus-visible:text-white-primary border-2 border-gray-primary py-1 px-4 rounded-lg hover:border-white-primary transition-all duration-300`}
             >
               Join a class
             </Link>

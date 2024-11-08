@@ -6,8 +6,8 @@ const navLinks = [
   },
   {
     id: 2,
-    label: "Gallery",
-    href: "/gallery",
+    label: "Blog",
+    href: "/blog",
   },
   {
     id: 3,

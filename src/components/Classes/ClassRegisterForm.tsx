@@ -3,6 +3,7 @@ import allClasses, { allClassesMap } from "../../utils/allClasses";
 import {
   Button,
   Label,
+  Link,
   ListBox,
   ListBoxItem,
   Popover,
@@ -57,12 +58,75 @@ function ClassRegisterForm({ defaultSelectedClassId }: ClassRegisterFormProps) {
     if (isValidated()) {
       console.log("form submitted");
       setFormIsValidated(true);
+      scrollTo(0, 0);
     }
+  };
+  const handlePostFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setName("");
+    setEmail("");
+    setSelectedClass(0);
+    setFormIsValidated(false);
+    scrollTo(0, 0);
   };
 
   useEffect(() => {
-    navigate({ to: "/classes/register", search: { classId: selectedClass } });
+    navigate({
+      to: "/classes/register",
+      search: { classId: selectedClass },
+      replace: true,
+    });
   }, [selectedClass]);
+
+  if (formIsValidated) {
+    return (
+      <form
+        onSubmit={handlePostFormSubmit}
+        className="border max-w-[600px] mx-auto p-10 shadow-lg"
+      >
+        <h2 className="pb-6 text-2xl font-bold">You're all set</h2>
+        <div className="form-input-container flex flex-col gap-6">
+          <p>
+            We will email you with further details and a reminder for this
+            upcoming class.
+            <br />
+            <br />
+            See you then.
+          </p>
+          {classObj && (
+            <div className="class-details border-t py-3 flex flex-col gap-2">
+              <p>Instructor: {classObj.instructor.name}</p>
+              <p>Date: {classAvailableDate}</p>
+              <p>Time: {classObj.time.split(" ").slice(1).join(" ")}</p>
+            </div>
+          )}
+        </div>
+        <div className="text-white pt-6">
+          <Link
+            href="/"
+            className={({ isHovered, isPressed, isFocusVisible, isDisabled }) =>
+              `px-6 py-2 inline-block transition-all duration-300 font-bold ${isFocusVisible ? "border-2 border-blue-600" : ""} ${isHovered || isPressed ? "bg-red-primary" : isDisabled ? "text-gray-200" : "bg-gray-primary"}`
+            }
+          >
+            Return to home
+          </Link>
+          <p className="text-gray-500 py-6 text-sm">
+            <span>Add another class? </span>{" "}
+            <Button
+              type="submit"
+              className={
+                "text-red-primary px-1 font-bold hover:underline focus-visible:underline"
+              }
+              aria-label="Back to class registration form"
+            >
+              Register here
+            </Button>
+          </p>
+        </div>
+      </form>
+    );
+  }
 
   return (
     <form
@@ -109,12 +173,12 @@ function ClassRegisterForm({ defaultSelectedClassId }: ClassRegisterFormProps) {
             onSelectionChange={(key) => {
               setSelectedClass(+key);
             }}
-            className={"flex flex-col md:flex-row md:items-center gap-3"}
+            className={`flex flex-col md:flex-row md:items-center gap-3`}
           >
             <Label>Select a class:</Label>
             <Button
               className={({ isFocusVisible, isHovered, isPressed }) =>
-                `flex gap-1 transition-all duration-300 items-center h-[38px] px-3 border border-gray-300 ${isFocusVisible ? "border-1 border-blue-700" : isHovered || isPressed ? "bg-gray-100 border-gray-100" : ""}`
+                `flex gap-1 transition-all duration-300 items-center h-[38px] px-3 border border-gray-300 ${isHovered || isPressed ? "bg-gray-100 border-gray-100" : ""} ${isFocusVisible ? "border border-black" : ""}`
               }
             >
               <SelectValue />

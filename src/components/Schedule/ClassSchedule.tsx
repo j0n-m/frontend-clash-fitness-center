@@ -18,6 +18,7 @@ import {
 } from "../../utils/time";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 import { ClassDays, validClassDays } from "../../routes/schedule";
+import { Helmet } from "react-helmet-async";
 
 //visually sets a border around the day tab to denote the current day
 function ClassSchedule() {
@@ -49,6 +50,9 @@ function ClassSchedule() {
 
   return (
     <section>
+      <Helmet>
+        <title>Clash Fitness Center | Class Schedule</title>
+      </Helmet>
       <LandingHeader text="Schedule" />
       <div className="pt-20 pb-40 px-4 md:px-10 lg:px-32 max-w-[2000px] mx-auto">
         <p className="font-bold text-center text-xl xs:text-2xl md:text-3xl py-10">
@@ -101,7 +105,7 @@ function ClassSchedule() {
                   key={index}
                   id={day}
                   className={({ isFocusVisible, isHovered, isSelected }) =>
-                    `px-4 py-2 text-center rounded-full outline-none ${day === currentDay && week === currentWeek ? "border" : ""} ${isSelected ? "bg-red-primary font-bold text-white" : isFocusVisible || isHovered ? "bg-gray-200 cursor-pointer" : ""}`
+                    `px-4 py-2 text-center outline-none rounded-full ${day === currentDay && week === currentWeek ? "border" : ""} ${isFocusVisible ? "outline outline-blue-600" : ""} ${isSelected ? "bg-red-primary font-bold text-white" : isHovered ? "bg-gray-200 cursor-pointer" : ""}`
                   }
                 >
                   {upperFirstLetters(day)}
@@ -151,7 +155,7 @@ function ClassSchedule() {
                             isPressed,
                             isFocusVisible,
                           }) =>
-                            `inline-flex border rounded-full px-6 py-2 ${isDisabled ? "text-gray-400 cursor-not-allowed" : isHovered || isFocusVisible || isPressed ? "hover:bg-red-primary" : ""} bg-gray-primary transition-all duration-300 cursor-pointer outline-none border-none`
+                            `inline-flex border rounded-full px-6 py-2 outline-none border-none ${isDisabled ? "text-gray-400 cursor-not-allowed" : isFocusVisible ? "outline outline-blue-600 bg-red-primary" : isHovered || isPressed ? "hover:bg-red-primary cursor-pointer" : ""} bg-gray-primary transition-all duration-300`
                           }
                         >
                           Join

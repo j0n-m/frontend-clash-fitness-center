@@ -69,7 +69,10 @@ function WhyChooseUs() {
               ))}
             </div>
             <div className="mt-12 relative z-0">
-              <Link className="see-classes-btn bg-gray-primary text-white text-lg font-bold px-8 py-4 inline-flex items-center">
+              <Link
+                to="/classes"
+                className="see-classes-btn bg-gray-primary text-white text-lg font-bold px-8 py-4 inline-flex items-center"
+              >
                 <span>Our Classes</span>
                 <ArrowRightIcon className="size-6 ml-1 pt-1" />
               </Link>

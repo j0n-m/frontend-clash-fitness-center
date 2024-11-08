@@ -26,6 +26,7 @@ body {
   width: 100%;
   height: 100%;
   /* scrollbar-width: none; */
+  scrollbar-color: #e6002e black;
   scroll-behavior: smooth;
   color: #0f0f0f;
   /* font-family:
@@ -58,12 +59,15 @@ button {
 
 button[data-rac] {
   outline: none;
-  &[data-focus-visible] {
+  &:focus-visible {
     outline: 2px solid white;
   }
 }
-div[data-rac] {
+/* button[data-rac]:not(:focus-visible) {
   outline: none;
+} */
+div[data-rac] {
+  outline-offset: -1px;
 }
 
 .food-icon {
@@ -290,6 +294,11 @@ div[data-rac] {
     animation: mymodal-slide 400ms reverse ease-in;
   }
 }
+.red-underline:hover::after {
+  transition: all 400ms;
+  width: 100%;
+}
+
 @keyframes mymodal-slide {
   from {
     transform: translateY(-100%);

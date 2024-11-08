@@ -14,7 +14,10 @@ function HeroSection() {
             Fit & Strong
           </p>
           <div className="link-to-classes relative z-0 mt-6 lg:mt-10 flex justify-center">
-            <Link className="bg-white-primary join-us-btn select-none text-black-primary py-4 px-8 font-bold hover:bg-white-dim1 focus-visible:bg-white-dim1">
+            <Link
+              to="/classes"
+              className="bg-white-primary join-us-btn select-none text-black-primary py-4 px-8 font-bold hover:bg-white-dim1 focus-visible:bg-white-dim1"
+            >
               Our Classes
             </Link>
           </div>

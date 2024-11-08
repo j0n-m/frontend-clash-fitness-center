@@ -2,10 +2,14 @@ import { UserIcon } from "@heroicons/react/16/solid";
 import LandingHeader from "../../components/LandingHeader";
 import allClasses from "../../utils/allClasses";
 import { Link } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 
 function ClassesPage() {
   return (
     <section>
+      <Helmet>
+        <title>Clash Fitness Center | Classes</title>
+      </Helmet>
       <LandingHeader text="Our Classes" />
       <div className="content px-4 md:px-10 lg:px-[--page-padding] py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-content-center mx-auto max-w-[2000px] gap-4">
@@ -47,6 +51,7 @@ function ClassesPage() {
         <div className="btn-container flex justify-center my-20">
           <Link
             to="/schedule"
+            search={{ week: -1 }}
             className="inline-flex bg-gray-primary text-white py-4 font-bold px-6 rounded-lg"
           >
             Schedule a class now

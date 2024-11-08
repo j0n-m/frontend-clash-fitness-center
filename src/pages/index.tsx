@@ -9,10 +9,14 @@ import NetworkPartners from "../components/Index/Sections/NetworkPartners";
 import PricingSection from "../components/Index/Sections/PricingSection";
 import LatestBlogSection from "../components/Index/Sections/LatestBlogSection";
 import ContactFitnessTrainer from "../components/Index/Sections/ContactFitnessTrainer";
+import { Helmet } from "react-helmet-async";
 
 function Index() {
   return (
     <main>
+      <Helmet>
+        <title>Clash Fitness Center | Home</title>
+      </Helmet>
       <HeroSection />
       <FitnessInfoCards />
       <WhoWeAreSection />

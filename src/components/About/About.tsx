@@ -1,9 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import LandingHeader from "../LandingHeader";
+import { Helmet } from "react-helmet-async";
 
 function About() {
   return (
     <section className="max-w-[2400px] mx-auto">
+      <Helmet>
+        <title>Clash Fitness Center | About</title>
+      </Helmet>
       <LandingHeader text="About Us" />
       <main className="my-20 px-4 md:px-[--page-padding]">
         <div className="about-content max-w-[1600px] px-2 flex items-center justify-center gap-10 mx-auto">
@@ -24,7 +28,10 @@ function About() {
               plan that helps you reach your specific goals.
             </p>
             <div className="contact-btn-container flex items-center mt-16">
-              <Link className="bg-red-primary purchase-red-btn text-white font-bold text-lg px-8 py-4">
+              <Link
+                to="/contact"
+                className="bg-red-primary purchase-red-btn text-white font-bold text-lg px-8 py-4"
+              >
                 Contact Us
               </Link>
             </div>

@@ -8,6 +8,7 @@ import Nav from "./components/NavigationBar/Nav";
 import Footer from "./components/Footer/Footer";
 import { RouterProvider } from "react-aria-components";
 import { ScrollRestoration } from "@tanstack/react-router";
+import { HelmetProvider } from "react-helmet-async";
 
 declare module "react-aria-components" {
   interface RouterConfig {
@@ -24,10 +25,12 @@ function App() {
         navigate={(to, options) => router.navigate({ to, ...options })}
         useHref={(to) => router.buildLocation({ to }).href}
       >
-        <Nav />
-        <ScrollRestoration />
-        <Outlet></Outlet>
-        <Footer />
+        <HelmetProvider>
+          <Nav />
+          <ScrollRestoration />
+          <Outlet></Outlet>
+          <Footer />
+        </HelmetProvider>
       </RouterProvider>
     </>
   );
